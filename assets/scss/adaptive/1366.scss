@@ -1,0 +1,67 @@
+@media screen and (max-width: 1366px) {
+	.container {
+		max-width: 130rem;
+	}
+
+	.screen-wrap {
+		h1 {
+			#curved-corner {
+				top: -6rem;
+				right: 16.5rem;
+			}
+			.rotate {
+				top: 24rem !important;
+			}
+
+			strong {
+				#curved-corner {
+					top: -6rem;
+					right: 1.6rem;
+				}
+			}
+		}
+	}
+	.screen {
+		.block-inner {
+			img {
+				display: none;
+			}
+		}
+		.block {
+			img {
+				width: 50rem;
+			}
+		}
+	}
+	#curved-corner {
+		top: -6rem;
+		right: 3.5rem;
+	}
+
+	.info {
+		.img {
+			height: 83rem;
+		}
+	}
+
+	.main-form {
+		input[type='text'],
+		textarea {
+			width: 20rem;
+		}
+		textarea {
+			width: 52rem;
+		}
+	}
+
+	.card-wrap {
+		align-items: center;
+		justify-content: center;
+	}
+	.agent {
+		img {
+			width: 58rem;
+			height: 56rem;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+@media screen and (max-width: 1024px) {
+	.container {
+		width: 80rem;
+	}
+
+	.screen {
+		.block:nth-child(3) {
+			display: none;
+		}
+		.block {
+			img {
+				margin-left: -5.4rem;
+				width: 50rem;
+			}
+		}
+	}
+
+	header ul {
+		font-size: 1.2rem;
+	}
+	.screen-wrap {
+		gap: 2rem;
+	}
+	.screen-wrap {
+		h1 {
+			#curved-corner {
+				top: -6rem;
+				right: 15rem;
+			}
+		}
+	}
+	.separator {
+		width: 70%;
+	}
+	.subtitle {
+		padding: 0 1rem;
+		font-size: 1.4rem !important;
+	}
+	.form-section {
+		.info {
+			display: none;
+		}
+		flex-direction: column;
+	}
+}

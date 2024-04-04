@@ -1,0 +1,26 @@
+{
+  "trailingComma": "none",
+  "tabWidth": 1,
+  "useTabs": true,
+  "semi": false,
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "importOrderParserPlugins": ["jsx", "typescript"],
+  "importOrder": [
+    "^react(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^@/services/(.*)$",
+    "^@/components/(.*)$",
+    "^@/components/ui/(.*)$",
+    "^@/assets/(.*)$",
+    "^@/config/(.*)$",
+    "^@/store/(.*)$",
+    "^@/utils/(.*)$",
+    "^@/api/(.*)$",
+    "^[./]",
+    "^@./(.*)$",
+    "^@../(.*)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

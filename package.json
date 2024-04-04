@@ -1,0 +1,31 @@
+{
+  "name": "china",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.28.14",
+    "@types/lodash-es": "^4.17.12",
+    "lodash-es": "^4.17.21",
+    "next": "14.1.0",
+    "node-mailer": "^0.1.1",
+    "nodemailer": "^6.9.13",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.51.2",
+    "react-toastify": "^10.0.5",
+    "sass": "^1.72.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/nodemailer": "^6.4.14",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  }
+}
