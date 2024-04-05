@@ -2,10 +2,10 @@ import Form from '@/shared/ui/form/Form'
 import BoxIcon from '@/shared/ui/icons/box'
 import Phone from '@/shared/ui/icons/phone'
 import Image from 'next/image'
-import About from './about'
-import Agent from './agent'
-import Project from './project'
-import Screen from './screen'
+import Screen from './homeScreenComponents/screen'
+import About from './homeScreenComponents/about'
+import Agent from './homeScreenComponents/agent'
+import Project from './homeScreenComponents/project'
 
 const HomePage = () => {
 	return (

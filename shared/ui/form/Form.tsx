@@ -1,34 +1,15 @@
 'use client'
-import { useSearchParams } from 'next/navigation'
 import { ChangeEvent, useState } from 'react'
-import { toast } from 'react-toastify'
 import { FileIcon } from '../icons/file'
 import { formHandler } from './action'
-import { useDebounce } from '@/hooks/useDebounce'
 
 const Form = () => {
 	const [file, setFile] = useState<File>()
+
 	const onInputChanged = (e: ChangeEvent<HTMLInputElement>) => {
 		const fileList = e.currentTarget.files
 		if (!fileList) return
 		setFile(fileList[0])
-	}
-	const searchParams = useSearchParams()
-	const success = searchParams.get('success')
-
-	const makeMessage = useDebounce((msg: string, warn?: boolean) => {
-		if (warn) {
-			toast.error(msg)
-		} else {
-			toast.success(msg)
-		}
-	}, 500)
-
-	if (success?.toString() === 'true') {
-		makeMessage('Заявка успешно отправлена')
-	}
-	if (success?.toString() === 'false') {
-		makeMessage('Заявка не отправлена', true)
 	}
 
 	return (
@@ -41,7 +22,7 @@ const Form = () => {
 				</div>
 				<div className="field">
 					<p>E-mail</p>
-					<input type="email" name="email" placeholder="Ваша рабочая почта*" />
+					<input type="text" name="email" placeholder="Ваша рабочая почта*" />
 				</div>
 				<div className="field">
 					<p>Телефон</p>

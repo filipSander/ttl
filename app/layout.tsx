@@ -3,7 +3,7 @@ import { Ubuntu } from 'next/font/google'
 import '@/assets/scss/style.scss'
 import Header from '@/shared/ui/header/header'
 import Footer from '@/shared/ui/footer/footer'
-import Providers from './providers'
+import Providers from '@/shared/providers/providers'
 
 const inter = Ubuntu({ subsets: ['cyrillic'], weight: ['400', '500', '700'] })
 

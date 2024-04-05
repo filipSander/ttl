@@ -1,17 +1,19 @@
 import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer'
 import { SendMailError } from '../errors'
-import { FormData } from '@/shared/ui/form/dto'
+import { privateConfig } from '@/assets/config/privateConfig'
+import { z } from 'zod'
+import { handlerShema } from '@/shared/ui/form/dto'
 
 export class MailService {
-	private _mailerOption = JSON.parse(process.env.MAILER!)
+	private _mailerOption = privateConfig.MAILER
 	private _transporter: nodemailer.Transporter
 
 	constructor() {
 		this._transporter = nodemailer.createTransport(this._mailerOption)
 	}
 
-	public async sendMailRq(dto: any) {
+	public async sendMailRq(dto: z.infer<typeof handlerShema>) {
 		const attachments = dto.file
 			? [
 					{
@@ -22,7 +24,7 @@ export class MailService {
 			: []
 		const options: Mail.Options = {
 			subject: 'Запрос c cайта ttl',
-			html: `Имя: ${dto.name}, E-mail: ${dto.email}, Телефон: ${dto.phone ? dto.phone : 'не указан'}, Текст ${dto.text}`,
+			html: `Имя: ${dto.name}, E-mail: ${dto.email}, Телефон: ${dto.phone ? dto.phone : 'не указан'}<br/> Текст: ${dto.text}`,
 			attachments: attachments
 		}
 

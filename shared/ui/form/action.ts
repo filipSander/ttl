@@ -1,11 +1,14 @@
 'use server'
-
 import { mailService } from '@/shared/lib/mail'
+import { handlerShema } from './dto'
 
-import { redirect } from 'next/navigation'
 export async function formHandler(data: FormData) {
-	const { file, name, email, phone, text } = Object.fromEntries(data)
-	const fileid = await mailService.sendMailRq({ name, email, phone, text, file })
-	console.log(fileid)
-	redirect('/?success=true')
+	try {
+		const result = handlerShema.parse(Object.fromEntries(data))
+		const fileid = await mailService.sendMailRq(result)
+		console.log(fileid)
+		return 'success'
+	} catch (e) {
+		return 'error'
+	}
 }

@@ -1,13 +1,8 @@
-'use client'
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../button/Button'
-import { useRouter } from 'next/navigation'
 
 const Header = () => {
-	const router = useRouter()
-
 	return (
 		<header>
 			<div className="container">
@@ -26,7 +21,7 @@ const Header = () => {
 						<Link href="/#about">О Нас</Link>
 					</li>
 				</ul>
-				<Button onClick={() => router.push('/#form')}>Рассказать о задаче</Button>
+				<Button navigate="/#form"> Рассказать о задаче</Button>
 			</div>
 		</header>
 	)

@@ -1,13 +1,9 @@
-'use client'
 import Button from '@/shared/ui/button/Button'
 import Arrow from '@/shared/ui/icons/arrow'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import React from 'react'
 
 const Screen = () => {
-	const router = useRouter()
 	return (
 		<section className="screen">
 			<div className="container">
@@ -36,7 +32,7 @@ const Screen = () => {
 						и профессионализм - гарантированы! <br />
 					</span>
 
-					<Button onClick={() => router.push('/#about')} className="screen-button">
+					<Button navigate={'/#about'} className="screen-button">
 						Больше информации о нас
 						<p>
 							<Arrow />

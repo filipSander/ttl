@@ -1,7 +1,20 @@
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+'use client'
+import { useRouter } from 'next/navigation'
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	navigate?: string
+}
 
 const Button = (props: ButtonProps) => {
-	return <button {...props} className={props.className + ' button'} />
+	const router = useRouter()
+	console.log(props.navigate)
+	return (
+		<button
+			{...props}
+			{...(props.navigate && { onClick: () => router.push(props.navigate!) })}
+			className={props.className + ' button'}
+		/>
+	)
 }
 
 export default Button
