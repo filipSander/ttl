@@ -7,7 +7,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = (props: ButtonProps) => {
 	const router = useRouter()
-	console.log(props.navigate)
 	return (
 		<button
 			{...props}

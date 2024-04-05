@@ -6,6 +6,7 @@ import Screen from './homeScreenComponents/screen'
 import About from './homeScreenComponents/about'
 import Agent from './homeScreenComponents/agent'
 import Project from './homeScreenComponents/project'
+import { privateConfig } from '@/assets/config/privateConfig'
 
 const HomePage = () => {
 	return (
@@ -28,20 +29,18 @@ const HomePage = () => {
 									удобную для вас соц. сеть и мы свяжемся с вами и обсудим запрос.
 								</span>
 								<ul>
-									<li>
-										<Phone />
-										<a href="tel:">
-											8 (800) 555-35-35 <br /> Name
-										</a>
-									</li>
-									<li>
-										<Phone />
-										<a href="tel:">
-											8 (800) 555-35-35 <br /> Name
-										</a>
-									</li>
+									{privateConfig.PHONES.map(phone => (
+										<li key={phone.phone}>
+											<Phone />
+											<a href={'tel:' + phone.phone.replace(/\D/g, '')}>
+												{phone.phone}
+												<br />
+												{phone.name}
+											</a>
+										</li>
+									))}
 								</ul>
-								<a href="mialto:">
+								<a href={'mailto:' + privateConfig.MAILER.auth.user}>
 									<Image src="/email.png" alt="email" width={250} height={250} />
 								</a>
 							</div>

@@ -9,10 +9,17 @@ const privateConfigSchema = z.object({
 			user: z.string(),
 			pass: z.string()
 		})
-	})
+	}),
+	PHONES: z.array(
+		z.object({
+			name: z.string(),
+			phone: z.string()
+		})
+	)
 })
 
 export const privateConfig = privateConfigSchema.parse({
 	...process.env,
-	MAILER: JSON.parse(process.env.MAILER!)
+	MAILER: JSON.parse(process.env.MAILER!),
+	PHONES: JSON.parse(process.env.PHONES!)
 })

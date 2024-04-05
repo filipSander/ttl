@@ -1,28 +1,51 @@
 'use client'
-import { ChangeEvent, useState } from 'react'
-import { FileIcon } from '../icons/file'
+import { useEffect } from 'react'
+import { useFormState } from 'react-dom'
+import { toast } from 'react-toastify'
 import { formHandler } from './action'
+import Submit from './submit'
+import File from './file'
 
 const Form = () => {
-	const [file, setFile] = useState<File>()
+	const [state, formAction] = useFormState(formHandler, undefined)
 
-	const onInputChanged = (e: ChangeEvent<HTMLInputElement>) => {
-		const fileList = e.currentTarget.files
-		if (!fileList) return
-		setFile(fileList[0])
-	}
+	useEffect(() => {
+		if (state)
+			toast.promise(
+				new Promise((resolve, reject) => {
+					state.includes('Сообщение отправлено') ? resolve(state) : reject(state)
+				}),
+				{
+					success: 'Сообщение отправлено',
+					error: 'Проблема при отправке',
+					pending: 'Отправка...'
+				}
+			)
+	}, [state])
 
 	return (
-		<form action={formHandler} id="form" className="main-form">
+		<form action={formAction} id="form" className="main-form">
 			<strong>Персональная информация</strong>
 			<div className="group">
 				<div className="field">
 					<p>Имя</p>
-					<input name="name" type="text" placeholder="Ваше имя*" />
+					<input
+						required
+						maxLength={50}
+						name="name"
+						type="text"
+						placeholder="Ваше имя*"
+					/>
 				</div>
 				<div className="field">
 					<p>E-mail</p>
-					<input type="text" name="email" placeholder="Ваша рабочая почта*" />
+					<input
+						type="text"
+						required
+						maxLength={50}
+						name="email"
+						placeholder="Ваша рабочая почта*"
+					/>
 				</div>
 				<div className="field">
 					<p>Телефон</p>
@@ -33,28 +56,20 @@ const Form = () => {
 			<div className="group">
 				<div className="field">
 					<p>Описание</p>
-					<textarea name="text" placeholder="Что вы хотете заказать из китая?*" />
+					<textarea
+						name="text"
+						required
+						maxLength={1000}
+						placeholder="Что вы хотете заказать из китая?*"
+					/>
 					<p>
 						*Расскажите о грузе как можно больше. Если у вас нет информации или вам
 						нужны поиск поставщика и закупка — напишите об это
 					</p>
 				</div>
-				<div className="field">
-					<p>Файл</p>
-					<label htmlFor="file">
-						<FileIcon />
-						<p>{file?.name ? file.name : 'Прикрепить Файл'}</p>
-					</label>
-					<input
-						onChange={e => onInputChanged(e)}
-						accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf, image/*"
-						id="file"
-						name="file"
-						type="file"
-					/>
-				</div>
+				<File />
 			</div>
-			<input className="button" type="submit" value="Рассказать о задаче" />
+			<Submit value="Рассказать о задаче" />
 		</form>
 	)
 }
