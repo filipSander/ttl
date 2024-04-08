@@ -10,6 +10,6 @@ export async function formHandler(
 	if (!result.success) return 'Не правильно заполнены поля'
 
 	const fileid = await mailService.sendMailRq(result.data)
-	console.log(fileid)
+	console.log('Message sent: ', fileid)
 	return 'Сообщение отправлено' + Date.now().toString()
 }

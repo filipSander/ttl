@@ -40,7 +40,7 @@ const Form = () => {
 				<div className="field">
 					<p>E-mail</p>
 					<input
-						type="text"
+						type="email"
 						required
 						maxLength={50}
 						name="email"

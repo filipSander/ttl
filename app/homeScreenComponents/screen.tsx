@@ -45,7 +45,11 @@ const Screen = () => {
 				<div className="block">
 					<div className="block-inner">
 						<Image src="/screen-3.jpg" alt="home" width={153} height={153} />
-						<Link href="#" data-title="Наши проекты" className="rounded-arrow">
+						<Link
+							href="/#project"
+							data-title="Наши проекты"
+							className="rounded-arrow"
+						>
 							<Arrow />
 						</Link>
 					</div>

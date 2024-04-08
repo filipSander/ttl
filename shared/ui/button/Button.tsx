@@ -1,16 +1,17 @@
 'use client'
 import { useRouter } from 'next/navigation'
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+import { HTMLMotionProps, motion } from 'framer-motion'
+interface ButtonProps extends HTMLMotionProps<'button'> {
 	navigate?: string
 }
 
 const Button = (props: ButtonProps) => {
 	const router = useRouter()
 	return (
-		<button
+		<motion.button
 			{...props}
 			{...(props.navigate && { onClick: () => router.push(props.navigate!) })}
+			whileTap={{ scale: 0.9 }}
 			className={props.className + ' button'}
 		/>
 	)

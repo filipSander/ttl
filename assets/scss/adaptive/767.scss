@@ -1,2 +1,119 @@
 @media screen and (max-width: 767px) {
+	.container {
+		width: 50rem;
+		gap: 2rem;
+	}
+
+	header {
+		.container {
+			flex-direction: column;
+		}
+	}
+
+	.screen {
+		.screen-hint {
+			padding: 1.3rem;
+			font-size: 1rem;
+		}
+		h1 {
+			font-size: 3.4rem;
+			width: 32rem !important;
+		}
+		.title {
+			height: auto;
+			margin-bottom: 17rem;
+		}
+		.screen-wrap {
+			gap: 1rem;
+			width: 20rem;
+		}
+		.screen-button {
+			width: 100%;
+			padding: 1rem;
+			p {
+				display: none;
+			}
+		}
+		.block {
+			img {
+				margin-left: -2rem;
+				width: 35rem;
+				height: 42rem;
+			}
+		}
+		.subtitle {
+			padding: 0 0 0 1rem;
+			font-size: 1rem !important;
+		}
+	}
+	header {
+		.button {
+			display: none;
+		}
+		ul {
+			gap: 1rem;
+			font-size: 1.2rem;
+		}
+	}
+	.screen-wrap {
+		gap: 2rem;
+	}
+	.head {
+		h3 {
+			font-size: 3.2rem;
+		}
+	}
+	.main-form {
+		strong {
+			font-size: 3.2rem;
+		}
+		.group {
+			label {
+				margin: 0 auto;
+			}
+		}
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.hint-text {
+		padding: 1rem;
+	}
+	.agent-text {
+		padding: 1rem;
+	}
+
+	.about {
+		padding: 0;
+		.wrap {
+			width: 50rem;
+			h2 {
+				font-size: 4.2rem;
+			}
+			img {
+				margin-top: 9rem;
+			}
+		}
+	}
+
+	.list-item {
+		img {
+			width: 20rem !important;
+			height: 20rem !important;
+		}
+		.text {
+			height: 20rem !important;
+			overflow: hidden !important;
+			p {
+				font-size: 1rem !important;
+			}
+			strong {
+				font-size: 1.6rem !important;
+			}
+			span {
+				line-height: 150% !important;
+				font-size: 1.2rem !important;
+			}
+		}
+	}
 }

@@ -1,33 +1,54 @@
 @media screen and (max-width: 1024px) {
 	.container {
-		width: 80rem;
+		width: 70rem;
 	}
 
 	.screen {
 		.block:nth-child(3) {
 			display: none;
 		}
+		.screen-hint {
+			font-size: 1.2rem;
+		}
+		h1 {
+			font-size: 5.4rem;
+		}
+		.screen-wrap {
+			width: 32rem;
+		}
+		.screen-button {
+			font-size: 1.2rem;
+		}
 		.block {
 			img {
-				margin-left: -5.4rem;
 				width: 50rem;
+				height: 60rem;
 			}
 		}
 	}
-
-	header ul {
-		font-size: 1.2rem;
+	header {
+		.button {
+			display: none;
+		}
+		ul {
+			gap: 1rem;
+			font-size: 1.2rem;
+		}
 	}
 	.screen-wrap {
 		gap: 2rem;
 	}
 	.screen-wrap {
 		h1 {
-			#curved-corner {
-				top: -6rem;
-				right: 15rem;
+			width: 49rem;
+			strong {
+				position: relative;
+				background-color: none;
 			}
 		}
+	}
+	#curved-corner {
+		display: none;
 	}
 	.separator {
 		width: 70%;
@@ -37,9 +58,96 @@
 		font-size: 1.4rem !important;
 	}
 	.form-section {
-		.info {
-			display: none;
+		margin-bottom: 0;
+		padding-bottom: 4rem;
+		.wrapper {
+			flex-direction: column;
+			position: relative;
+			.info {
+				img {
+					display: none;
+				}
+				.wrap {
+					position: relative;
+					gap: 4rem;
+					span {
+						width: 70%;
+					}
+					img {
+						display: block;
+					}
+				}
+			}
 		}
-		flex-direction: column;
+	}
+
+	.main-form {
+		.group {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			.field {
+				width: 90%;
+			}
+			input,
+			textarea {
+				width: 90%;
+			}
+		}
+		gap: 3rem;
+		width: 70rem;
+		height: auto;
+	}
+
+	.about {
+		.wrap {
+			width: 90%;
+			img {
+				margin-top: 12rem;
+			}
+		}
+		h2 {
+			font-size: 6.4rem;
+		}
+	}
+	.agent {
+		.wrap {
+			width: 90%;
+			margin: 0 auto;
+			img {
+				width: 100%;
+				height: auto;
+			}
+			flex-direction: column;
+		}
+	}
+	.hint-text {
+		width: 100%;
+	}
+	.project {
+		.list-item {
+			img {
+				width: 40%;
+				height: auto;
+			}
+			gap: 2rem;
+			.text {
+				gap: 2rem;
+				p {
+					font-size: 1.2rem;
+				}
+				strong {
+					font-size: 1.8rem;
+				}
+				span {
+					font-size: 1.5rem;
+					line-height: 170%;
+				}
+			}
+			.data {
+				display: none;
+			}
+		}
 	}
 }
